@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16A323" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Imagec" representedClassName=".Imagec" syncable="YES" codeGenerationType="class">
+        <attribute name="image" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <relationship name="toitem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Itemc" inverseName="toimage" inverseEntity="Itemc" syncable="YES"/>
+        <relationship name="tostore" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Storec" inverseName="toimage" inverseEntity="Storec" syncable="YES"/>
+    </entity>
+    <entity name="Itemc" representedClassName=".Itemc" syncable="YES" codeGenerationType="class">
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="toimage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Imagec" inverseName="toitem" inverseEntity="Imagec" syncable="YES"/>
+        <relationship name="toitemtype" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Itemtypec" inverseName="toitem" inverseEntity="Itemtypec" syncable="YES"/>
+        <relationship name="tostore" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Storec" inverseName="toitem" inverseEntity="Storec" syncable="YES"/>
+    </entity>
+    <entity name="Itemtypec" representedClassName=".Itemtypec" syncable="YES" codeGenerationType="class">
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="toitem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Itemc" inverseName="toitemtype" inverseEntity="Itemc" syncable="YES"/>
+    </entity>
+    <entity name="Storec" representedClassName=".Storec" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="toimage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Imagec" inverseName="tostore" inverseEntity="Imagec" syncable="YES"/>
+        <relationship name="toitem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Itemc" inverseName="tostore" inverseEntity="Itemc" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Imagec" positionX="-90" positionY="234" width="128" height="88"/>
+        <element name="Itemc" positionX="-27" positionY="18" width="128" height="148"/>
+        <element name="Itemtypec" positionX="214" positionY="9" width="128" height="73"/>
+        <element name="Storec" positionX="187" positionY="153" width="128" height="88"/>
+    </elements>
+</model>
