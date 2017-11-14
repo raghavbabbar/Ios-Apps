@@ -25,8 +25,6 @@ class WeatherCell: UITableViewCell {
       weatherType.text=obj.weathertypr
       dayLabel.text=obj.date
       weatherIcon.image=UIImage(named: weatherType.text!)
-        
-        
     }
     
    
